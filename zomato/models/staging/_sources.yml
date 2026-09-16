@@ -1,0 +1,22 @@
+# Declares the RAW schema tables (loaded via the Snowflake COPY INTO scripts)
+# as dbt sources, so staging models can reference them with source('raw', ...)
+# instead of hardcoding schema/table names everywhere.
+sources:
+  - name: raw
+    database: ZOMATO
+    schema: RAW
+    tables:
+      - name: restaurants
+        description: "This table contains the raw data of restaurants from Zomato."
+      - name: users
+        description: "This table contains the raw data of users from Zomato."
+      - name: food
+        description: "This table contains the raw data of food items from Zomato."
+      - name: menu
+        description: "This table contains the raw data of menus from Zomato."
+      - name: orders
+        description: "This table contains the raw data of orders from Zomato."
+      - name: order_items
+        description: "This table contains the raw data of order items from Zomato."
+      - name: reviews
+        description: "This table contains the raw data of reviews from Zomato."
